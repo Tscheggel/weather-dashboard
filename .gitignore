@@ -1,0 +1,49 @@
+# === Python / FastAPI ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+ENV/
+env.bak
+venv.bak
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# === Angular / Node.js ===
+node_modules/
+dist/
+.angular/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === Umgebungsvariablen & Geheimnisse ===
+.env
+.env.local
+.env.*.local
+
+# === Betriebssysteme / Editor spezifisch ===
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# IDEs & Editoren (VS Code, PyCharm etc.)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Datenbanken & Docker (lokale Volumes) ===
+*.sqlite3
+*.db
+postgres_data/
