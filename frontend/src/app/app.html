@@ -1,15 +1,9 @@
-<div>
-  <h1 class="text-3xl">Weather Dashboard</h1>
-  
-  @if (weatherData) {
-    <div>
-      <h2>Stadt: {{ weatherData.location.city }}</h2>
-      <p>Temperatur: {{ weatherData.current.temperature }} °C</p>
-      <p>Zustand: {{ weatherData.current.description }}</p>
-      <p>Luftfeuchtigkeit: {{ weatherData.current.humidity }} %</p>
-      <p>Windgeschwindigkeit: {{ weatherData.current.wind_speed }} km/h</p>
-    </div>
-  } @else {
-    <p>Lade Wetterdaten...</p>
-  }
-</div>
+<main class="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-4">
+  <div class="w-full max-w-md">
+    <h1 class="text-3xl font-bold text-slate-800 mb-6 text-center">
+      Weather Dashboard
+    </h1>
+
+    <app-weather-card [weatherData]="weatherData"></app-weather-card>
+  </div>
+</main>
