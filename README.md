@@ -2,4 +2,24 @@
 
 > **Status:** 🚧 Under Active Development
 
-A modern full-stack web application designed to monitor real-time weather conditions and IoT sensor telemetries. This project combines a modular Angular frontend with a high-performance Python (FastAPI) backend, leveraging WebSockets for live data streaming and PostgreSQL for persistent data storage. Fully containerized with Docker for seamless deployment.
+A modern web application designed to monitor real-time weather conditions. This project combines a modular Angular frontend with a high-performance Python (FastAPI) backend. 
+
+### Running the Backend
+
+Copy and run the following commands in your terminal to set up and start the FastAPI backend:
+
+```bash
+# 1. Navigate into the backend directory
+cd backend
+
+# 2. Create a local virtual environment (.venv) to isolate Python packages
+python3 -m venv .venv
+
+# 3. Activate the virtual environment
+source .venv/bin/activate
+
+# 4. Install the required dependencies (FastAPI, Uvicorn) from requirements.txt
+pip install -r requirements.txt
+
+# 5. Start the development server with auto-reload enabled
+uvicorn app.main:app --reload
