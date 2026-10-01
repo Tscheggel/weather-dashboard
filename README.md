@@ -23,3 +23,20 @@ pip install -r requirements.txt
 
 # 5. Start the development server with auto-reload enabled
 uvicorn app.main:app --reload
+```
+
+
+### Running the Frontend
+
+```bash
+#1 Install Angular CLI globally (if not already installed)
+npm install -g @angular/cli@22
+
+#2 Navigate to the frontend directory
+cd frontend
+
+#3 Install project dependencies
+npm install
+
+#4 Start the frontend locally
+ng serve
