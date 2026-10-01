@@ -10,6 +10,6 @@ export class WeatherService {
   private apiUrl = 'http://127.0.0.1:8000/api/weather';
 
   getWeather(city: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${city}`);
-  }
+    return this.http.get(`${this.apiUrl}/${encodeURIComponent(city.trim())}`);
+}
 }

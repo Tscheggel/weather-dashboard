@@ -4,6 +4,23 @@
       Weather Dashboard
     </h1>
 
-    <app-weather-card [weatherData]="weatherData"></app-weather-card>
+    <div class="flex gap-2 mb-6">
+      <input 
+        #cityInput 
+        type="text" 
+        placeholder="Enter City (f.e. Berlin)..." 
+        class="flex-1 px-4 py-3 rounded-2xl bg-white border border-slate-200/60 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-700"
+        (keyup.enter)="fetchWeather(cityInput.value)"
+      >
+      <button 
+        type="button"
+        (click)="fetchWeather(cityInput.value)"
+        class="px-5 py-3 bg-blue-600 text-white font-medium rounded-2xl shadow-sm hover:bg-blue-700 transition cursor-pointer"
+      >
+        Search
+      </button>
+    </div>
+
+    <app-weather-card [weatherData]="weatherData()"></app-weather-card>
   </div>
 </main>

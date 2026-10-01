@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { WeatherService } from './services/weather';
 import { WeatherCardComponent } from './weather-card/weather-card';
 
@@ -8,18 +8,22 @@ import { WeatherCardComponent } from './weather-card/weather-card';
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
-export class App {
+export class App implements OnInit {
   private weatherService = inject(WeatherService);
-  weatherData: any = null;
+  weatherData = signal<any>(null);
 
   ngOnInit() {
-    this.weatherService.getWeather('Nuremberg').subscribe({
+    this.fetchWeather('Nuremberg');
+  }
+
+  fetchWeather(city: string) {
+    if (!city.trim()) return;
+
+    this.weatherService.getWeather(city).subscribe({
       next: (data) => {
-        this.weatherData = data;
+        this.weatherData.set(data);
       },
-      error: (err) => {
-        console.error('Failed to load weather data:', err);
-      }
+      error: (err) => console.error('Error by loading weather data:', err),
     });
   }
 }
