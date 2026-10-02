@@ -1,10 +1,31 @@
-# weather-dashboard
+# Weather Dashboard
 
-> **Status:** 🚧 Under Active Development
+> **Status:** ✅ Stable
 
-A modern web application designed to monitor real-time weather conditions and view daily forecasts for a searched city. The interactive map lets you select a location and load weather for its nearest city. This project combines a modular Angular frontend with a Python (FastAPI) backend. The map uses Leaflet and OpenStreetMap tiles; city lookup uses the OpenStreetMap Nominatim search and reverse-geocoding endpoints, with responses cached and requests rate-limited to respect its usage policy.
+<p align="center">
+  <img src="image.png" alt="Weather Dashboard screenshot" width="500">
+</p>
 
-### Running the Backend
+A modern web application to monitor real-time weather conditions and view the forecast for any searched city. An interactive map lets you click a location and load the weather for its nearest city. The project combines a modular Angular frontend with a Python (FastAPI) backend.
+
+## Features
+
+- Search for a city by name, or click directly on the map to select a location
+- Interactive map (Leaflet + OpenStreetMap tiles) with reverse geocoding to resolve the nearest city
+- Current conditions: temperature, weather description, humidity, wind speed
+- 3-day forecast with daily high/low and rain probability
+- Backend caching and rate-limiting for the Nominatim geocoding requests, to stay within its usage policy and keep the app responsive
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Angular, TypeScript, Leaflet |
+| Backend | Python, FastAPI, Uvicorn |
+| Map / Geocoding | OpenStreetMap tiles, Nominatim (search + reverse geocoding) |
+| Weather data | python-weather |
+
+## Running the Backend
 
 Copy and run the following commands in your terminal to set up and start the FastAPI backend:
 
@@ -25,18 +46,22 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-
-### Running the Frontend
+## Running the Frontend
 
 ```bash
-#1 Install Angular CLI globally (if not already installed)
+# 1. Install Angular CLI globally (if not already installed)
 npm install -g @angular/cli@22
 
-#2 Navigate to the frontend directory
+# 2. Navigate to the frontend directory
 cd frontend
 
-#3 Install project dependencies
+# 3. Install project dependencies
 npm install
 
-#4 Start the frontend locally
+# 4. Start the frontend locally
 ng serve
+```
+
+## Author
+
+Fabian Honta-Jekel · [GitHub](https://github.com/Tscheggel)
