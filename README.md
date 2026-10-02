@@ -2,7 +2,7 @@
 
 > **Status:** 🚧 Under Active Development
 
-A modern web application designed to monitor real-time weather conditions. This project combines a modular Angular frontend with a high-performance Python (FastAPI) backend. 
+A modern web application designed to monitor real-time weather conditions and view daily forecasts for a searched city. The interactive map lets you select a location and load weather for its nearest city. This project combines a modular Angular frontend with a Python (FastAPI) backend. The map uses Leaflet and OpenStreetMap tiles; city lookup uses the OpenStreetMap Nominatim search and reverse-geocoding endpoints, with responses cached and requests rate-limited to respect its usage policy.
 
 ### Running the Backend
 

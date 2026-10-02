@@ -1,5 +1,5 @@
 <main class="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-4">
-  <div class="w-full max-w-md">
+  <div class="w-full max-w-2xl">
     <h1 class="text-3xl font-bold text-slate-800 mb-6 text-center">
       Weather Dashboard
     </h1>
@@ -21,6 +21,22 @@
       </button>
     </div>
 
-    <app-weather-card [weatherData]="weatherData()"></app-weather-card>
+    <app-city-map
+      [city]="selectedCity()"
+      [weatherData]="weatherData()"
+      (citySelected)="selectMapCity($event, cityInput)"
+    ></app-city-map>
+
+    @if (weatherError(); as error) {
+      <p class="mb-4 rounded-xl bg-red-50 p-3 text-sm text-red-700" role="alert">{{ error }}</p>
+    }
+
+    @if (weatherData(); as data) {
+      <app-weather-card [weatherData]="data"></app-weather-card>
+    } @else {
+      <div class="rounded-3xl bg-white p-10 text-center shadow-lg border border-slate-200/60">
+        <p class="text-slate-400 animate-pulse font-medium">Loading Data...</p>
+      </div>
+    }
   </div>
 </main>

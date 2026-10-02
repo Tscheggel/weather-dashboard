@@ -1,0 +1,6 @@
+<section aria-label="City weather map" class="mb-6">
+  <div #mapElement class="h-72 w-full rounded-2xl border border-slate-200 shadow-sm" role="application" aria-label="Interactive map. Click a location to see its weather."></div>
+  <p class="mt-2 text-sm" [class.text-red-600]="message.error" [class.text-slate-500]="!message.error" aria-live="polite">
+    {{ message.text }}
+  </p>
+</section>
